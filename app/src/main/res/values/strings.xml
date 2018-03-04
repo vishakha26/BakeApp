@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Bake App</string>
+    <string name="url">https://d17h27t6h515a5.cloudfront.net/topher/2017/May/59121517_baking/baking.json</string>
+    <string name="what_you_need">What you will need:</string>
+    <string name="no_internet">No Internet Connection</string>
+    <string name="bad_json">Error, Unknown data format. Check for app updates</string>
+    <string name="unknown_status_code">Error, Internet available, but cannot connect. Check for app updates</string>
+    <string name="unknown_error">Unknown error occurred</string>
+    <string name="more_details">More Details</string>
+
+    widget text
+    <string name="appwidget_text">app widget text</string>
+    <string name="empty_list_view_widget_text">No Ingredients</string>
+    <string name="widget_configure_select_recipe">Select a Recipe</string>
+
+
+    <string name="previous">Previous</string>
+    <string name="next">Next</string>
+
+</resources>

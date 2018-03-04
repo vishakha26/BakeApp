@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.udacitypro.bakeapp">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
+    <application
+        android:allowBackup="true"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        <activity android:name="com.udacitypro.bakeapp.DisplayMainList">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            />
+        </activity>
+
+        <activity android:name="com.udacitypro.bakeapp.StepDetailsActivity">
+        </activity>
+
+        <activity android:name="com.udacitypro.bakeapp.MainActivity"
+            android:parentActivityName="com.udacitypro.bakeapp.MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.udacitypro.bakeapp.MainActivity" />
+        </activity>
+
+
+        <service
+            android:name="com.udacitypro.bakeapp.ListWidgetService"
+            android:permission="android.permission.BIND_REMOTEVIEWS"/>
+
+        <provider
+            android:name="com.udacitypro.bakeapp.provider.generated.RecipeContentProvider"
+            android:authorities="com.udacitypro.recipe.provider"
+            android:exported="true"/>
+
+        <receiver android:name="com.udacitypro.bakeapp.IngredientListWidget">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/ingredient_list_widget_info"/>
+        </receiver>
+
+        <activity android:name="com.udacitypro.bakeapp.IngredientListWidgetConfigureActivity">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE"/>
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
